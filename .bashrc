@@ -107,7 +107,6 @@ alias ll='exa -lg'
 alias py3='python3 '
 alias vf='vim -p $(fzf -m)' 
 alias cd='z' # with zoxide installed.
-#alias youtube-dl='/usr/bin/youtube-dl '
 
 
 # enable programmable completion features (you don't need to enable
