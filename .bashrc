@@ -106,7 +106,6 @@ alias ll='ls -lFh'
 alias ll='exa -lg' 
 alias py3='python3 '
 alias vf='vim -p $(fzf -m)' 
-alias cd='z' # with zoxide installed.
 
 
 # enable programmable completion features (you don't need to enable
