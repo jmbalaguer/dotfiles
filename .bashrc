@@ -100,13 +100,27 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
+alias l='ls' 
 alias la='ls -Ah'
-alias l='ranger' 
 alias ll='ls -lFh'
-alias ll='exa -lg' 
 alias py3='python3 '
 alias vf='vim -p $(fzf -m)' 
 
+if command -v eza 2>&1 >/dev/null
+then
+  alias ll='eza -alF'
+  alias la='eza -A'
+fi
+
+if command -v ranger 2>&1 >/dev/null
+then
+  alias l='ranger' 
+fi
+
+if command -v zoxide 2>&1 >/dev/null
+then
+  alias cd='z' # zoxide
+fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -120,7 +134,15 @@ if ! shopt -oq posix; then
 fi
 
 
-neofetch
-eval "$(zoxide init bash)"
+if command -v neofetch 2>&1 >/dev/null
+then
+  neofetch
+fi
+
+if command -v zoxide 2>&1 >/dev/null
+then
+  eval "$(zoxide init bash)"
+fi
+
 curl wttr.in/{Barcelona,Darmstadt,Leipzig,London,Boston}?format=4
 
