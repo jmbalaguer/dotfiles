@@ -144,5 +144,5 @@ then
   eval "$(zoxide init bash)"
 fi
 
-curl wttr.in/{Barcelona,Darmstadt,Leipzig,London,Boston}?format=4
-
+curl wttr.in/{Barcelona,Darmstadt,Leipzig,London,Boston}?format=4 
+echo $(date +"%Y.%m.%d, %A, %T ") "* External IP:" $(curl ifconfig.me 2>nul) >> ext_IP.txt
