@@ -145,4 +145,4 @@ then
 fi
 
 curl wttr.in/{Barcelona,Darmstadt,Leipzig,London,Boston}?format=4 
-echo $(date +"%Y.%m.%d, %A, %T ") "* External IP:" $(curl ifconfig.me 2>nul) >> ext_IP.txt
+echo $(date +"%Y.%m.%d, %A, %T ") "* External IP:" $(curl ifconfig.me 2> /dev/null) >> ext_IP.txt
