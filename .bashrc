@@ -144,5 +144,9 @@ then
   eval "$(zoxide init bash)"
 fi
 
+# Weather
 curl wttr.in/{Barcelona,Darmstadt,Leipzig,London,Boston}?format=4 
-echo $(date +"%Y.%m.%d, %A, %T ") "* External IP:" $(curl ifconfig.me 2> /dev/null) >> ext_IP.txt
+
+# Log date and IP address into file 
+printf "%-11s %-9s %9s - External IP: %s\n" $(date +'%Y.%m.%d, %A, %T ')  $(curl ifconfig.me 2> /dev/null) >> ext_IP.txt 
+
