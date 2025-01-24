@@ -105,6 +105,9 @@ alias la='ls -Ah'
 alias ll='ls -lFh'
 alias py3='python3 '
 alias vf='vim -p $(fzf -m)' 
+alias df='df -ahiT --total'  
+alias du='du -ach | sort -h'
+alias free='free -mt' 
 
 if command -v eza 2>&1 >/dev/null
 then
