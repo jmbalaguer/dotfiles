@@ -1,6 +1,6 @@
 ! Enable a color supported XTerm 
 XTerm.termName: xterm-256color
-xterm*background: #333333  
+xterm*background: #301010 
 xterm*foreground: white
 
 ! Set xterm window size 
