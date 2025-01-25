@@ -105,7 +105,7 @@ alias la='ls -Ah'
 alias ll='ls -lFh'
 alias py3='python3 '
 alias vf='vim -p $(fzf -m)' 
-alias df='df -ahiT --total'  
+alias df='df -hT --total'  
 alias du='du -ach | sort -h'
 alias free='free -mt' 
 
