@@ -108,6 +108,7 @@ alias vf='vim -p $(fzf -m)'
 alias df='df -hT --total'  
 alias du='du -ach | sort -h'
 alias free='free -mt' 
+alias distro='cat /etc/lsb-release'
 
 if command -v eza 2>&1 >/dev/null
 then
