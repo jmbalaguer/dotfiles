@@ -109,6 +109,7 @@ alias df='df -hT --total'
 alias du='du -ach | sort -h'
 alias free='free -mt' 
 alias distro='cat /etc/lsb-release'
+alias battery='upower -i /org/freedesktop/UPower/devices/battery_BAT0| grep -E "state|to\ full|percentage"'
 
 if command -v eza 2>&1 >/dev/null
 then
