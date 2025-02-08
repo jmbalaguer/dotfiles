@@ -90,7 +90,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-  alias ls='ls --color=auto'
+  alias ls='ls --color=auto -F'
   alias grep='grep --color=auto'
   alias fgrep='fgrep --color=auto'
   alias egrep='egrep --color=auto'
@@ -98,9 +98,9 @@ fi
 
 # some more ls aliases
 alias l='ls' 
-alias la='ls -lA'
+alias la='ls -AFh'
 alias ll='ls -lFh'
-alias py3='python3 '
+alias py3='python3'
 alias vf='vim -p $(fzf -m)' 
 alias df='df -hT --total'  
 alias du='du -ach | sort -h'
