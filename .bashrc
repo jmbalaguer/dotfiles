@@ -106,7 +106,10 @@ alias vf='vim -p $(fzf -m)'
 alias df='df -hT --total'  
 alias du='du -ach | sort -h'
 alias free='free -mt' 
+alias cd..='cd ..' 
+alias cpu='cpuid -i | grep uarch | head -n 1' 
 alias distro='cat /etc/lsb-release'
+alias kernel='ls /usr/lib/modules' 
 alias battery='upower -i /org/freedesktop/UPower/devices/battery_BAT0| grep -E "state|to\ full|percentage"'
 
 if command -v eza 2>&1 >/dev/null
