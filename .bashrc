@@ -93,14 +93,14 @@ if [ -x /usr/bin/dircolors ]; then
   alias ls='ls --color=auto -F'
   alias grep='grep --color=auto'
   alias fgrep='fgrep --color=auto'
-  alias egrep='egrep --color=auto'
+  alias egrep='grep -E --color=auto'
 fi
 
 # some more ls aliases
 alias l='ls' 
 alias la='ls -AFh'
 alias ll='ls -lFh'
-alias l.='ls -A | egrep '\''^\.'\''' 
+alias l.='ls -A | grep -E '\''^\.'\''' 
 alias py3='python3'
 alias vf='vim -p $(fzf -m)' 
 alias df='df -hT --total'  
