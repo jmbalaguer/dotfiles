@@ -100,6 +100,7 @@ fi
 alias l='ls' 
 alias la='ls -AFh'
 alias ll='ls -lFh'
+alias l.='ls -A | egrep '\''^\.'\''' 
 alias py3='python3'
 alias vf='vim -p $(fzf -m)' 
 alias df='df -hT --total'  
