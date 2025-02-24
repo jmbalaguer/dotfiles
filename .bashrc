@@ -27,6 +27,7 @@ shopt -s checkwinsize
 #shopt -s globstar
 
 # bash autocomplete 
+bind 'set completion-ignore-case on'
 bind 'set show-all-if-ambiguous on'
 bind 'TAB:menu-complete'
 
