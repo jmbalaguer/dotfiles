@@ -26,19 +26,31 @@ shopt -s checkwinsize
 # match all files and zero or more directories and subdirectories.
 #shopt -s globstar
 
-# bash autocomplete 
+# Bash autocomplete 
 bind 'set completion-ignore-case on'
 bind 'set show-all-if-ambiguous on'
 bind 'TAB:menu-complete'
 
+# Enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
+
+
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
   debian_chroot=$(cat /etc/debian_chroot)
 fi
-
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
@@ -134,31 +146,16 @@ then
   alias cd='z' # zoxide
 fi
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
-fi
-
-
-if command -v neofetch 2>&1 >/dev/null
+# Set up fzf key bindings and fuzzy completion
+if command -v fzf 2>&1 >/dev/null
 then
-  neofetch
+  eval "$(fzf --bash)"
+  alias ff='fzf -e' # fzf in exact mode by default
 fi
 
-if command -v zoxide 2>&1 >/dev/null
-then
-  eval "$(zoxide init bash)"
-fi
 
 # Weather
 curl wttr.in/{Barcelona,Darmstadt,Leipzig,London,Boston}?format=4 
 
 # Log date and IP address into file 
 printf "%-11s %-9s %9s - External IP: %s\n" $(date +'%Y.%m.%d, %A, %T ')  $(curl ifconfig.me 2> /dev/null) >> ~/ext_IP.txt 
-
