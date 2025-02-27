@@ -154,6 +154,12 @@ then
 fi
 
 
+# Neofetch
+if command -v neofetch 2>&1 >/dev/null
+then
+  neofetch
+fi
+
 # Weather
 curl wttr.in/{Barcelona,Darmstadt,Leipzig,London,Boston}?format=4 
 
