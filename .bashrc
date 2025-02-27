@@ -118,6 +118,7 @@ fi
 alias l='ls' 
 alias la='ls -AFh'
 alias ll='ls -lFh'
+alias ld='ls -d */'
 alias l.='ls -A | grep -E '\''^\.'\''' 
 alias py3='python3'
 alias vf='vim -p $(fzf -m)' 
