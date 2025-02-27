@@ -132,7 +132,7 @@ alias battery='upower -i /org/freedesktop/UPower/devices/battery_BAT0| grep -E "
 
 if command -v eza 2>&1 >/dev/null
 then
-  alias ll='eza -alF'
+  alias ll='eza -lF'
   alias la='eza -AF' 
 fi
 
