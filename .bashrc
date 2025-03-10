@@ -144,6 +144,7 @@ fi
 
 if command -v zoxide 2>&1 >/dev/null
 then
+  eval "$(zoxide init bash)"
   alias cd='z' # zoxide
 fi
 
