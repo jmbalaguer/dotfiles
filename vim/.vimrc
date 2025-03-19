@@ -130,6 +130,9 @@ set viminfo^=%
 
 " GENERAL KEY MAPPINGS ====================================================================================
 
+" Another way to escape insert mode 
+imap ii <Esc>
+
 " Change the mapleader from \ to ,
 let mapleader=","
 
