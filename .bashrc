@@ -155,9 +155,11 @@ then
   alias ff='fzf -e' # fzf in exact mode by default
 fi
 
-
-# Neofetch
-if command -v neofetch 2>&1 >/dev/null
+# Fastfetch or Neofetch
+if command -v fastfetch 2>&1 >/dev/null
+then
+  fastfetch
+elif command -v neofetch 2>&1 >/dev/null
 then
   neofetch
 fi
