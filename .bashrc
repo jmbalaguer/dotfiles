@@ -137,12 +137,12 @@ then
   alias la='eza -AF' 
 fi
 
-if command -v nnn  2>&1 >/dev/null
+if command -v ranger 2>&1 >/dev/null
+then
+  alias l='. ranger' 
+elif command -v nnn  2>&1 >/dev/null
 then
   alias l='nnn' 
-elif command -v ranger 2>&1 >/dev/null
-then
-  alias l='ranger' 
 fi
 
 if command -v zoxide 2>&1 >/dev/null
