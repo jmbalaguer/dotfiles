@@ -1,0 +1,3 @@
+(if (contains (application_name) "virt-manager") 
+  (geometry "-48+400")
+)
