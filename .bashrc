@@ -153,12 +153,23 @@ then
   alias cd='z' # zoxide
 fi
 
+
 # Set up fzf key bindings and fuzzy completion
 if command -v fzf 2>&1 >/dev/null
 then
-  eval "$(fzf --bash)"
+  #eval "$(fzf --bash)"
+
+  # Don't source FZF shell integrations if version is older than 0.48 (Avoids `unknown option: --bash`)
+  # Version comparison technique courtesy of Luciano Andress Martini:
+  # https://unix.stackexchange.com/questions/285924/how-to-compare-a-programs-version-in-a-shell-script
+  FZF_VERSION="$(fzf --version | cut -d' ' -f1)"
+  if [[ -f ~/.fzf.bash && "$(printf '%s\n' 0.48 "$FZF_VERSION" | sort -V | head -n1)" = 0.48 ]]; then
+    . ~/.fzf.bash
+  fi
+
   alias ff='fzf -e' # fzf in exact mode by default
 fi
+
 
 # Fastfetch or Neofetch
 if command -v fastfetch 2>&1 >/dev/null
