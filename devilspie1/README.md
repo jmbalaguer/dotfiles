@@ -1,1 +1,2 @@
-Default files folder: ~/.devilspie.
+# Default files folder: 
+~/.devilspie.
