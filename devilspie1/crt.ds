@@ -1,0 +1,3 @@
+(if (contains (window_name) "cool") 
+  (geometry "1200x800+120+48")
+)
